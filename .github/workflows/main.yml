@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+  
+jobs:
+  build:
+    name: prepare and build code
+    runs-on: ubuntu-latest
+    steps:
+    - name: Use node
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        echo " manual request "
+        
